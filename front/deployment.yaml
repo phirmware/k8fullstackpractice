@@ -24,7 +24,7 @@ spec:
                 containerPort: 3000
           env:
             - name: BACKEND_URL
-              value: backservice
+              value: http://backservice:5000
 
 ---
 
