@@ -41,3 +41,4 @@ spec:
     - port: 5000
       targetPort: backport
       protocol: TCP
+      nodePort: 31001
