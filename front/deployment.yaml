@@ -37,5 +37,6 @@ spec:
     app: fullstackapp-frontend
   type: NodePort
   ports:
-    - port: 30002
+    - port: 3000
       targetPort: frontport
+      protocol: TCP

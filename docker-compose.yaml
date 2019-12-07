@@ -1,9 +1,11 @@
 version: "2"
 services:
   front:
-    image: 09036229746/front:v1
+    image: 09036229746/front:v3
     ports:
       - "3000:3000"
+    environment: 
+      - "BACKEND_URL=http://localhost:5000"
     depends_on:
       - back
   back:

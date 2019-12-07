@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fullstack-backend
+  labels:
+    app: fullstackapp-backend
 spec:
   replicas: 2
   selector:
@@ -29,10 +31,13 @@ kind: Service
 apiVersion: v1
 metadata:
   name: backservice
+  labels:
+    app: fullstackapp-backend
 spec:
   selector:
     app: fullstackapp-backend
   type: NodePort
   ports:
-    - port: 30001
+    - port: 5000
       targetPort: backport
+      protocol: TCP
