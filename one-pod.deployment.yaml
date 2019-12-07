@@ -24,3 +24,16 @@ spec:
             - name: backendport
               containerPort: 5000
 
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: onepodservice
+spec:
+  selector:
+    app: onepodapp
+  type: LoadBalancer
+  ports:
+    - port: 30002
+      targetPort: frontendport

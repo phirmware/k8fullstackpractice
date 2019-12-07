@@ -24,5 +24,18 @@ spec:
                 containerPort: 3000
           env:
             - name: BACKEND_URL
-              value: $(backservice)
-              
+              value: backservice
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: frontservice
+spec:
+  selector:
+    app: fullstackapp-frontend
+  type: NodePort
+  ports:
+    - port: 30002
+      targetPort: frontport
