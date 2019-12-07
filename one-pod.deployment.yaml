@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: onepodeployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: onepodapp
+  template:
+    metadata:
+      labels:
+        app: onepodapp
+    spec:
+      containers:
+        - name: frontend-pod
+          image: 09036229746/front:v1
+          ports:
+            - name: frontendport
+              containerPort: 3000
+        - name: backend-pod
+          image: 09036229746/back:v1
+          ports:
+            - name: backendport
+              containerPort: 5000
+

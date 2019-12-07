@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: backservice
+spec:
+  selector:
+    app: fullstackapp-backend
+  type: LoadBalancer
+  ports:
+    - port: 30001
+      targetPort: backport

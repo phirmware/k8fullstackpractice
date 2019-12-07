@@ -1,0 +1,12 @@
+version: "2"
+services:
+  front:
+    image: 09036229746/front:v1
+    ports:
+      - "3000:3000"
+    depends_on:
+      - back
+  back:
+    image: 09036229746/back:v1
+    ports:
+      - "5000:5000"
